@@ -1,0 +1,33 @@
+@use './header';
+@use './home';
+@use './destination';
+@use './crew';
+@use './technology';
+
+@media screen and (max-width: 892px){
+    html{
+        --pages-padding: 10vh 32px;
+        --pages-grid: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    @include header.media_892px();
+    @include crew.media_892px();
+    @include technology.media_892px();
+}
+
+@media screen and (max-width: 472px){
+    html{
+        --pages-grid: repeat(auto-fit, minmax(250px, 1fr));
+
+    }
+
+    @include home.media_472px();
+    @include destination.media_472px();
+    @include crew.media_472px();
+    @include technology.media_472px();
+}
+
+// home en cel
+// destination en cel
+// crew en cel
+// tech en cel

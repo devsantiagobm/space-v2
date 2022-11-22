@@ -1,0 +1,121 @@
+.home {
+    animation: show-a .5s ease both;
+    padding: var(--pages-padding);
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    width: 100%;
+
+    @keyframes show-a {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    &__box {
+        width: 100%;
+        display: grid;
+        grid-template-columns: var(--pages-grid);
+        row-gap: 20vh;
+        column-gap: 64px;
+        justify-items: center;
+    }
+
+    &__column {
+        width: 100%;
+
+        &:nth-child(1) {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        &:nth-child(2) {
+            display: grid;
+            place-items: center;
+        }
+    }
+
+    &__subtitle {
+        color: var(--gray-soft);
+        font-size: 1.25rem;
+        letter-spacing: 2px;
+        word-spacing: 1px;
+        text-transform: uppercase;
+        font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    &__title {
+        font-size: 7rem;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    &__pharagraph {
+        max-width: 400px;
+        line-height: 1.5rem;
+        color: var(--gray-soft);
+        font-family: 'Barlow Condensed', sans-serif;
+    }
+
+
+    &__button {
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        width: 250px;
+        aspect-ratio: 1;
+        background-color: var(--white);
+        color: var(--black);
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        cursor: pointer;
+        position: relative;
+
+
+        &::before {
+            content: "";
+            border-radius: 50%;
+            border-top: 3px solid #FFF;
+            border-right: 3px solid transparent;
+            animation: infinite-rotation 3s linear infinite;
+            animation-delay: .2s;
+            position: absolute;
+            width: 120%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            animation-play-state: paused;
+            transition: opacity .2s ease;
+        }
+
+        @media (hover:hover) {
+            &:hover::before {
+                opacity: 1;
+                animation-play-state: running;
+            }
+        }
+    }
+}
+
+@mixin media_472px {
+    .home {
+
+
+        &__title{
+            font-size: 5.5rem;
+        }
+    
+        &__button {
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            width: 200px;
+        }
+    }
+}

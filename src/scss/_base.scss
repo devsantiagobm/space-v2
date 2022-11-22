@@ -1,0 +1,30 @@
+html {
+    --white: #fff;
+    --gray: #444;
+    --gray-soft: hsl(231, 76%, 78%);
+    --black: #0c0e18;
+    --pages-padding: 10vh 124px ;
+    --pages-grid: repeat(auto-fit, minmax(400px, 1fr));
+
+
+    font-family: 'Bellefair', serif;
+    font-weight: 400;
+    color: var(--white);
+    background-color: var(--black);
+    min-height: 101vh;
+    color-scheme: dark;
+}
+
+.background-image {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100vw;
+    min-height: 100vh;
+    user-select: none;
+}
+
+::selection{
+    background-color: var(--white);
+    color: var(--black);
+}
